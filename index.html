@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferrari — paixão pela velocidade</title>
+  <style>
+    :root { color-scheme: dark; --rosso: #e10600; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: radial-gradient(ellipse at 50% 20%, #302020 0, #171717 55%); color: #f5f5f5; line-height: 1.7; overflow-x: hidden; }
+    header { min-height: 330px; position: relative; isolation: isolate; overflow: hidden; padding: 4rem 1.5rem 7.5rem; text-align: center; background: linear-gradient(135deg, #650000, #e10600 58%, #7e0800); }
+    header::before { content: ""; position: absolute; z-index: -1; inset: 0; opacity: .18; background: repeating-linear-gradient(115deg, transparent 0 70px, #fff 71px 73px, transparent 74px 145px); animation: sweep 12s linear infinite; }
+    header::after { content: ""; position: absolute; z-index: -1; width: 28rem; height: 28rem; left: 50%; top: -19rem; transform: translateX(-50%); border-radius: 50%; background: #ff6b35; filter: blur(75px); opacity: .34; }
+    header h1 { margin: 0; font-size: clamp(2.5rem, 8vw, 5rem); letter-spacing: .08em; }
+    header p { margin-bottom: 0; font-size: 1.2rem; text-shadow: 0 2px 16px #480000; }
+    .faixa { position: absolute; bottom: 0; left: 0; width: 100%; height: 78px; overflow: hidden; background: linear-gradient(180deg, transparent, #111 36%); }
+    .pista { position: absolute; bottom: 10px; left: 0; width: 100%; height: 4px; background: repeating-linear-gradient(90deg, #f4d7a0 0 42px, transparent 42px 86px); opacity: .65; }
+    .carro { position: absolute; z-index: 1; width: 300px; height: 88px; bottom: 10px; left: -330px; filter: drop-shadow(0 0 12px #ff382d); animation: passar 8s linear infinite; }
+    .carro svg { width: 100%; height: 100%; overflow: visible; }
+    .rotulo { position: absolute; right: 1.5rem; bottom: 20px; color: #ffb5a7; font-size: .72rem; letter-spacing: .22em; font-weight: 700; text-transform: uppercase; text-shadow: 0 0 12px #ff2c21; }
+    .faíscas { position: absolute; inset: 0; background-image: radial-gradient(circle, #ffd18b 0 1px, transparent 2px), radial-gradient(circle, #ff5136 0 1px, transparent 2px); background-size: 83px 43px, 127px 57px; background-position: 0 4px, 48px 19px; opacity: .5; animation: faísca 1.4s linear infinite; }
+    .luz { position: absolute; width: 55vw; height: 24px; right: -5vw; bottom: 31px; background: linear-gradient(90deg, transparent, #ff3d2a55, transparent); filter: blur(8px); animation: pulso 2s ease-in-out infinite alternate; }
+    main { position: relative; max-width: 850px; margin: auto; padding: 2.5rem 1.5rem; }
+    section { padding: .25rem 1rem 1rem; border-bottom: 1px solid #ffffff12; animation: surgir .8s both; }
+    section:nth-child(2) { animation-delay: .12s; } section:nth-child(3) { animation-delay: .24s; }
+    h2 { color: #ff4b43; margin-top: 2rem; text-shadow: 0 0 18px #e1060040; }
+    .destaque { border-left: 4px solid #e10600; padding: 1rem 1.25rem; background: linear-gradient(90deg, #e1060022, #252525); box-shadow: 0 8px 30px #0005; }
+    footer { padding: 1.5rem; text-align: center; color: #bbb; background: #101010; }
+    @keyframes passar { 0% { transform: translateX(0) translateY(0); } 12% { transform: translateX(12vw) translateY(-3px); } 88% { transform: translateX(calc(88vw + 260px)) translateY(2px); } 100% { transform: translateX(calc(100vw + 570px)) translateY(0); } }
+    @keyframes sweep { to { background-position: 300px 0; } }
+    @keyframes surgir { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes faísca { to { background-position: 83px 47px, 175px 76px; } }
+    @keyframes pulso { to { opacity: .35; transform: scaleX(.65); } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; } }
+    @media (max-width: 600px) { header { min-height: 300px; } .carro { width: 205px; } .rotulo { right: 1rem; font-size: .58rem; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ferrari</h1>
+    <p>Paixão, inovação e velocidade desde 1947</p>
+    <div class="faixa" aria-hidden="true">
+      <div class="faíscas"></div><div class="luz"></div>
+      <div class="pista"></div>
+      <div class="carro">
+        <svg viewBox="0 0 320 92" role="img" aria-label="Carro de Fórmula 1 vermelho">
+          <g fill="#111"><rect x="54" y="39" width="22" height="39" rx="8"/><rect x="221" y="39" width="22" height="39" rx="8"/><circle cx="82" cy="67" r="18"/><circle cx="231" cy="67" r="18"/></g>
+          <g fill="#aaa" stroke="#555" stroke-width="2"><circle cx="82" cy="67" r="8"/><circle cx="231" cy="67" r="8"/></g>
+          <path d="M44 43h28v7H44zM48 35h20v8H48z" fill="#f1eee8" stroke="#b90000" stroke-width="2"/>
+          <path d="M5 57h37l19-11 35-5 30-17h47l19 18 33 4 22 10 27 2v8h-37l-10-12h-18l-10 12h-99l-10-12H89L78 66H5z" fill="#d90808" stroke="#ff6458" stroke-width="2"/>
+          <path d="M207 47l32 3 34 9h-51z" fill="#f21b16" stroke="#ff8578" stroke-width="1.5"/>
+          <path d="M120 27l14-18h38l17 19-12 5h-46z" fill="#ed1717" stroke="#ff8a7d" stroke-width="2"/>
+          <path d="M132 14h28l12 13h-49z" fill="#18232d" stroke="#ff4b43" stroke-width="2"/>
+          <path d="M129 20q16-14 35 0" fill="none" stroke="#e7c16d" stroke-width="3"/>
+          <path d="M244 56h52l14 5-2 5h-57z" fill="#f0eee8" stroke="#a90000" stroke-width="2"/>
+          <path d="M95 49l19-7 18 2-12 8-27 3z" fill="#a90000"/><path d="M104 55h43" stroke="#ffd34e" stroke-width="3"/>
+          <path d="M3 68h37M18 77h42" stroke="#ffb08a" stroke-width="2" opacity=".7"/>
+        </svg>
+      </div>
+      <span class="rotulo">Scuderia Ferrari</span>
+    </div>
+  </header>
+  <main>
+    <section>
+      <h2>Uma história de tradição</h2>
+      <p>A Ferrari é uma das marcas mais reconhecidas do automobilismo mundial. Fundada por Enzo Ferrari, em Maranello, na Itália, a empresa construiu sua reputação unindo engenharia de alto desempenho, design marcante e uma forte ligação com as pistas.</p>
+    </section>
+    <section>
+      <h2>O espírito das corridas</h2>
+      <p>As competições sempre fizeram parte da identidade da Ferrari. A experiência adquirida nas pistas inspira tecnologias e soluções que também aparecem em seus carros de estrada. Na Fórmula 1, o tradicional vermelho da equipe e o símbolo do cavalo rampante são conhecidos por fãs do mundo inteiro.</p>
+    </section>
+    <section>
+      <h2>Design e inovação</h2>
+      <p>Mais do que velocidade, um Ferrari combina proporções elegantes, atenção aos detalhes e constante evolução tecnológica. Cada modelo busca oferecer uma experiência de condução emocionante, sem deixar de lado a personalidade italiana que tornou a marca lendária.</p>
+    </section>
+    <p class="destaque">A Ferrari representa o encontro entre paixão pelo automobilismo, criatividade e busca contínua por desempenho.</p>
+  </main>
+  <footer>Uma homenagem à história e à paixão da Ferrari pelo automobilismo.</footer>
+</body>
+</html>
